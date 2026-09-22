@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import Link from "next/link";
 import { CrestLogo } from "./crest-logo";
 import { clubConfig } from "@/lib/config";
@@ -13,15 +13,15 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-4 space-y-5">
             <div className="flex items-center space-x-3.5">
-              <div className="w-12 h-12 bg-[#70111A] rounded-sm flex items-center justify-center border border-[#9A1E2B]">
-                <CrestLogo size={32} color="cream" />
+              <div className="w-12 h-12 bg-[#500308] rounded-md flex items-center justify-center border border-[#7A0D15] p-1.5">
+                <CrestLogo size={34} variant="transparent" />
               </div>
               <div>
                 <span className="font-serif font-black text-2xl tracking-tight text-white block leading-none">
                   MARLBROS FC
                 </span>
                 <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-neutral-400 mt-1 block">
-                  Football Club · Est. 2023
+                  Football Club Â· Est. 2023
                 </span>
               </div>
             </div>
@@ -110,7 +110,7 @@ export function Footer() {
                   {clubConfig.bKashNumber}
                 </div>
                 <div className="text-[10px] text-neutral-500 mt-0.5">
-                  Type: {clubConfig.bKashType} · Use Name as Reference
+                  Type: {clubConfig.bKashType} Â· Use Name as Reference
                 </div>
               </div>
 
@@ -133,8 +133,8 @@ export function Footer() {
         {/* Bottom Credits & Copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-neutral-500 space-y-4 sm:space-y-0">
           <div className="flex items-center space-x-2">
-            <span>© {new Date().getFullYear()} MarlBros FC. All rights reserved.</span>
-            <span>·</span>
+            <span>Â© {new Date().getFullYear()} MarlBros FC. All rights reserved.</span>
+            <span>Â·</span>
             <span>Strict Editorial Edition</span>
           </div>
 
@@ -151,3 +151,4 @@ export function Footer() {
     </footer>
   );
 }
+

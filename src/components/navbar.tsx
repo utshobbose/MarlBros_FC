@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
@@ -77,7 +77,7 @@ export function Navbar() {
             </span>
             <span className="hidden md:inline text-neutral-500">|</span>
             <span className="hidden md:inline text-neutral-400">
-              Est. 2023 · 7 to 30 Brothers Strong
+              Est. 2023 Â· 7 to 30 Brothers Strong
             </span>
           </div>
 
@@ -91,7 +91,7 @@ export function Navbar() {
               <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
               <span className="hidden sm:inline">WhatsApp Order Desk</span>
             </a>
-            <span className="text-neutral-600">·</span>
+            <span className="text-neutral-600">Â·</span>
             <Link
               href="/admin"
               className="text-neutral-400 hover:text-white transition-colors"
@@ -110,8 +110,8 @@ export function Navbar() {
             href="/"
             className="flex items-center space-x-3.5 group focus:outline-none"
           >
-            <div className="w-12 h-12 bg-[#70111A] rounded-sm flex items-center justify-center border border-[#9A1E2B] shadow-inner group-hover:scale-105 transition-transform duration-200">
-              <CrestLogo size={32} color="cream" />
+            <div className="w-12 h-12 bg-[#500308] rounded-md flex items-center justify-center border border-[#7A0D15] p-1.5 shadow-inner group-hover:scale-105 transition-transform duration-200">
+              <CrestLogo size={34} variant="transparent" />
             </div>
             <div className="flex flex-col">
               <span className="font-serif font-black tracking-tight text-2xl leading-none text-[#111111] group-hover:text-black">
@@ -216,7 +216,7 @@ export function Navbar() {
                             MarlBros FC vs Victoria United
                           </div>
                           <div className="text-[10px] text-neutral-500 mt-1">
-                            Friday 4:30 PM · Home Ground
+                            Friday 4:30 PM Â· Home Ground
                           </div>
                         </div>
                       </div>
@@ -341,3 +341,4 @@ export function Navbar() {
     </header>
   );
 }
+

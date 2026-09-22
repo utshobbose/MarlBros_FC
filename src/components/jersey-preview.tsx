@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import Image from "next/image";
@@ -255,13 +255,17 @@ export function JerseyPreview({
                 /* FRONT GRAPHICS: Chest Text & Embroidered Crest */
                 <g id="front-details">
                   {/* Embroidered Crest on Left Chest (Wearer's Left = Viewer's Right) */}
-                  <g transform="translate(242, 100) scale(0.48)">
-                    <foreignObject width="120" height="130">
-                      <CrestLogo size={60} color="cream" />
-                    </foreignObject>
+                  <g transform="translate(246, 96)">
+                    <image
+                      href="/images/marlbros-crest-transparent.png"
+                      x="0"
+                      y="0"
+                      width="46"
+                      height="46"
+                    />
                   </g>
 
-                  {/* Chest Brand Typography: "MARLBROS" and "— FC —" */}
+                  {/* Chest Brand Typography: "MARLBROS" and "â€” FC â€”" */}
                   <text
                     x="200"
                     y="180"
@@ -387,9 +391,10 @@ export function JerseyPreview({
         <span className="bg-[#111111] text-white px-2 py-0.5 rounded text-[11px] font-mono font-bold">
           {size}
         </span>
-        <span>·</span>
+        <span>Â·</span>
         <span>Official Player Cut</span>
       </div>
     </div>
   );
 }
+

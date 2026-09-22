@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import Image from "next/image";
@@ -127,7 +127,7 @@ export default function AboutPage() {
                 "No individual is bigger than the crest. The ball moves faster than any runner. We play for the badge."
               </blockquote>
               <div className="text-xs font-mono text-neutral-400">
-                — MarlBros FC Founding Principles
+                â€” MarlBros FC Founding Principles
               </div>
             </div>
 
@@ -178,8 +178,8 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Symbol 1 */}
             <div className="bg-white p-6 rounded-lg border border-[#E5D7C0] space-y-4 text-center">
-              <div className="w-16 h-16 bg-[#70111A] text-white rounded-full flex items-center justify-center mx-auto shadow-md">
-                <CrestLogo size={36} color="cream" />
+              <div className="w-16 h-16 bg-[#500308] rounded-full flex items-center justify-center mx-auto shadow-md p-2 border border-[#7A0D15]">
+                <CrestLogo size={44} variant="transparent" />
               </div>
               <h3 className="font-serif font-bold text-lg text-[#111111]">
                 The Imperial Crown
@@ -191,14 +191,14 @@ export default function AboutPage() {
 
             {/* Symbol 2 */}
             <div className="bg-white p-6 rounded-lg border border-[#E5D7C0] space-y-4 text-center">
-              <div className="w-16 h-16 bg-[#111111] text-[#F3EBDD] rounded-full flex items-center justify-center mx-auto shadow-md font-serif text-2xl font-bold">
+              <div className="w-16 h-16 bg-[#111111] rounded-full flex items-center justify-center mx-auto shadow-md p-2 border border-[#333]">
                 MB
               </div>
               <h3 className="font-serif font-bold text-lg text-[#111111]">
                 Interlocking Monogram
               </h3>
               <p className="text-xs text-neutral-600 leading-relaxed">
-                The letters 'M' and 'B' are seamlessly intertwined, mirroring how every individual player’s identity is locked into the greater collective brotherhood of MarlBros.
+                The letters 'M' and 'B' are seamlessly intertwined, mirroring how every individual playerâ€™s identity is locked into the greater collective brotherhood of MarlBros.
               </p>
             </div>
 
@@ -230,7 +230,7 @@ export default function AboutPage() {
 
           <div className="flex items-center space-x-2 text-xs">
             <span className="inline-block w-2.5 h-2.5 rounded-full bg-[#70111A]"></span>
-            <span className="font-semibold text-neutral-600">★ = Founding Seven Member</span>
+            <span className="font-semibold text-neutral-600">â˜… = Founding Seven Member</span>
           </div>
         </div>
 
@@ -251,7 +251,7 @@ export default function AboutPage() {
                 </span>
                 {player.isFounder && (
                   <span className="text-[10px] bg-[#70111A] text-white px-1.5 py-0.5 rounded font-bold uppercase">
-                    ★ Founder
+                    â˜… Founder
                   </span>
                 )}
               </div>
@@ -294,3 +294,4 @@ export default function AboutPage() {
     </div>
   );
 }
+
