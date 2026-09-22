@@ -9,80 +9,65 @@ export default function GalleryPage() {
   const [activeCategory, setActiveCategory] = useState<string>("All");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
-  const categories = ["All", "Reveal", "Matches", "Training", "Brotherhood"];
+  const categories = ["All", "Brotherhood", "Kit Reveal", "Garment Details"];
 
+  // 100% Authentic MarlBros FC imagery — Zero generic stock photos!
   const allGalleryItems: GalleryItem[] = [
     {
       id: "g-1",
-      title: "Batch #01 Official Kit Reveal: Front & Back",
-      category: "Reveal",
-      src: "/images/jersey-showcase.jpg",
-      caption: "The complete 2026 kit layout with embroidered monogram crest and polo collar.",
-      date: "Sept 2026",
+      title: "The MarlBros FC Squad on Turf",
+      category: "Brotherhood",
+      src: "/images/team-squad.jpg",
+      caption: "All 30 brothers united under the night floodlights at Victoria Turf Arena.",
+      date: "2026",
     },
     {
       id: "g-2",
-      title: "Embroidered Monogram Crest Closeup",
-      category: "Reveal",
+      title: "Batch #01 Official Kit Reveal: Complete Layout",
+      category: "Kit Reveal",
+      src: "/images/jersey-showcase.jpg",
+      caption: "The complete 2026 crimson and vintage cream matchday kit showcase.",
+      date: "Sept 2026",
+    },
+    {
+      id: "g-3",
+      title: "Authentic Heraldic Embroidered Crest",
+      category: "Garment Details",
       src: "/images/marlbros-crest-patch.jpg",
       caption: "High-density metallic gold & cream threading on rich crimson jacquard.",
       date: "Sept 2026",
     },
     {
-      id: "g-3",
-      title: "Tailored Vintage Polo Collar & Throat Inset",
-      category: "Reveal",
+      id: "g-4",
+      title: "Tailored Vintage Polo Collar & Inset",
+      category: "Garment Details",
       src: "/images/collar-detail.jpg",
-      caption: "Classic collar with contrasting internal tri-stripe accent.",
+      caption: "Classic collar with contrasting internal tri-stripe accent and throat inset.",
       date: "Sept 2026",
     },
     {
-      id: "g-4",
-      title: "The MarlBros FC Squad on Turf",
-      category: "Brotherhood",
-      src: "/images/team-squad.jpg",
-      caption: "Our inaugural team squad after the founding derby fixture.",
-      date: "Oct 2023",
-    },
-    {
       id: "g-5",
-      title: "Night Lights Tactical Training Drills",
-      category: "Training",
-      src: "https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1000&q=80",
-      caption: "Fast-transition passing drills and small-sided conditioning.",
-      date: "Aug 2026",
+      title: "Home Jersey: Front Chest & Shoulder Stripes",
+      category: "Kit Reveal",
+      src: "/images/jersey-front.jpg",
+      caption: "Raglan shoulder racing stripes, curved breathable side panels, and chest branding.",
+      date: "Sept 2026",
     },
     {
       id: "g-6",
-      title: "Championship Derby Final: Match Action",
-      category: "Matches",
-      src: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1000&q=80",
-      caption: "Contesting a corner kick in our 3-1 victory against Victoria United.",
-      date: "July 2026",
+      title: "Home Jersey: Player Custom Name & Collegiate Number",
+      category: "Kit Reveal",
+      src: "/images/jersey-back.jpg",
+      caption: "Collegiate double-stroke athletic back numbers and arched player lettering.",
+      date: "Sept 2026",
     },
     {
       id: "g-7",
-      title: "Goalkeeper Reflex Training & Shot Stopping",
-      category: "Training",
-      src: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1000&q=80",
-      caption: "Tanvir Ahmed undergoing specialized penalty box distribution training.",
-      date: "Aug 2026",
-    },
-    {
-      id: "g-8",
-      title: "Starting XI Pre-Kickoff Huddle",
-      category: "Matches",
-      src: "https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?auto=format&fit=crop&w=1000&q=80",
-      caption: "Captain Zubair Hossain leading the pre-match chant before kick-off.",
-      date: "June 2026",
-    },
-    {
-      id: "g-9",
-      title: "Weekend Team Barbecue & Tactical Review",
-      category: "Brotherhood",
-      src: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1000&q=80",
-      caption: "Celebrating a milestone victory with all 30 squad members and supporters.",
-      date: "May 2026",
+      title: "Official MarlBros FC Crest Standard",
+      category: "Garment Details",
+      src: "/images/marlbros-official-crest.png",
+      caption: "The royal crown with center fleur-de-lis, acanthus leaves, and intertwined MB monogram.",
+      date: "Official Standard",
     },
   ];
 
@@ -102,7 +87,7 @@ export default function GalleryPage() {
               The MarlBros Photographic Ledger.
             </h1>
             <p className="text-base text-neutral-600 font-light">
-              High-resolution dispatches from the pitch, training sessions, kit reveals, and club brotherhood moments.
+              High-resolution dispatches from the pitch, official kit reveals, heraldic crest embroidery, and team squad moments.
             </p>
           </div>
 
@@ -153,7 +138,7 @@ export default function GalleryPage() {
               <div className="absolute bottom-3 left-3 right-3 text-white">
                 <div className="flex items-center space-x-2 text-[10px] uppercase font-bold tracking-wider text-[#C2A267]">
                   <span>{item.category}</span>
-                  <span>Â·</span>
+                  <span>·</span>
                   <span className="text-neutral-400">{item.date}</span>
                 </div>
                 <h3 className="font-serif font-bold text-base mt-0.5 group-hover:underline">
@@ -186,4 +171,3 @@ export default function GalleryPage() {
     </div>
   );
 }
-

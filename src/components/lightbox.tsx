@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useEffect } from "react";
 import Image from "next/image";
@@ -7,7 +7,7 @@ import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
 export interface GalleryItem {
   id: string;
   title: string;
-  category: "Matches" | "Training" | "Reveal" | "Brotherhood";
+  category: string;
   src: string;
   caption?: string;
   date?: string;
@@ -102,7 +102,7 @@ export function Lightbox({
               <span className="text-[10px] uppercase tracking-widest font-extrabold text-[#C2A267]">
                 {currentItem.category}
               </span>
-              <span className="text-neutral-500">·</span>
+              <span className="text-neutral-500">Â·</span>
               <span className="text-xs text-neutral-400">{currentItem.date}</span>
             </div>
             <h3 className="font-serif text-base font-bold tracking-tight text-white mt-0.5">
@@ -121,3 +121,4 @@ export function Lightbox({
     </div>
   );
 }
+

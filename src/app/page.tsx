@@ -25,10 +25,18 @@ export default function HomePage() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [heroImageTab, setHeroImageTab] = useState<"squad" | "jersey">("squad");
 
-  // Curated gallery preview items
+  // 100% Authentic MarlBros FC imagery — No generic stock photos!
   const galleryPreview: GalleryItem[] = [
     {
       id: "gal-1",
+      title: "The MarlBros 30 Brotherhood",
+      category: "Brotherhood",
+      src: "/images/team-squad.jpg",
+      caption: "The complete MarlBros squad under the floodlights at Victoria Turf Arena.",
+      date: "2026",
+    },
+    {
+      id: "gal-2",
       title: "Batch #01 Official Kit Reveal",
       category: "Reveal",
       src: "/images/jersey-showcase.jpg",
@@ -36,19 +44,11 @@ export default function HomePage() {
       date: "Sept 2026",
     },
     {
-      id: "gal-2",
-      title: "The MarlBros 30 Brotherhood on Turf",
-      category: "Brotherhood",
-      src: "/images/team-squad.jpg",
-      caption: "The complete MarlBros squad under the floodlights after an intensive evening session.",
-      date: "2026",
-    },
-    {
       id: "gal-3",
-      title: "Embroidered Monogram Crest Detail",
+      title: "Official Embroidered Crest Patch",
       category: "Reveal",
       src: "/images/marlbros-crest-patch.jpg",
-      caption: "Intricate crown and interlocking MB gold embroidery over deep crimson weave.",
+      caption: "Ornate crown and interlocking MB monogram embroidery.",
       date: "Sept 2026",
     },
     {
@@ -61,19 +61,19 @@ export default function HomePage() {
     },
     {
       id: "gal-5",
-      title: "High Intensity Evening Training Session",
-      category: "Training",
-      src: "https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=800&q=80",
-      caption: "Drills, endurance conditioning, and tactical positioning under the floodlights.",
-      date: "Aug 2026",
+      title: "Player Custom Name & Number 10",
+      category: "Reveal",
+      src: "/images/jersey-back.jpg",
+      caption: "Collegiate double-stroke athletic back numbers and arched player lettering.",
+      date: "Sept 2026",
     },
     {
       id: "gal-6",
-      title: "Weekend Championship Victory",
-      category: "Matches",
-      src: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80",
-      caption: "3-1 win in the inter-city invitational cup group stage.",
-      date: "July 2026",
+      title: "Matchday Home Kit Front Profile",
+      category: "Reveal",
+      src: "/images/jersey-front.jpg",
+      caption: "Front chest branding, embroidered crest over heart, and raglan shoulder stripes.",
+      date: "Sept 2026",
     },
   ];
 
@@ -527,12 +527,12 @@ export default function HomePage() {
               href="/gallery"
               className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-neutral-300 hover:text-white transition-colors"
             >
-              <span>View Full Gallery ({galleryPreview.length}+)</span>
+              <span>View Full Gallery ({galleryPreview.length})</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
-          {/* 6 Photo Grid */}
+          {/* 6 Photo Grid - 100% Real MarlBros Assets */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {galleryPreview.map((item, index) => (
               <div
@@ -563,10 +563,10 @@ export default function HomePage() {
       </section>
 
       {/* 5. "GET YOUR JERSEY" FULL WIDTH BANNER CTA */}
-      <section className="bg-[#70111A] text-white py-16 px-4 sm:px-8 border-b border-[#4D0911]">
+      <section className="bg-[#500308] text-white py-16 px-4 sm:px-8 border-b border-[#3E0206]">
         <div className="max-w-5xl mx-auto text-center space-y-6">
-          <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto border border-white/20">
-            <CrestLogo size={40} color="cream" />
+          <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto border border-white/20 p-2 shadow-lg">
+            <CrestLogo size={46} variant="transparent" />
           </div>
 
           <span className="editorial-kicker text-[#FAF6EE]">BATCH #01 NOW ACTIVE</span>
