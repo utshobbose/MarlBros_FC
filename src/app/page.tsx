@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import Image from "next/image";
@@ -18,10 +18,12 @@ import {
   ChevronRight,
   TrendingUp,
   CheckCircle2,
+  Camera,
 } from "lucide-react";
 
 export default function HomePage() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [heroImageTab, setHeroImageTab] = useState<"squad" | "jersey">("squad");
 
   // Curated gallery preview items
   const galleryPreview: GalleryItem[] = [
@@ -35,6 +37,14 @@ export default function HomePage() {
     },
     {
       id: "gal-2",
+      title: "The MarlBros 30 Brotherhood on Turf",
+      category: "Brotherhood",
+      src: "/images/team-squad.jpg",
+      caption: "The complete MarlBros squad under the floodlights after an intensive evening session.",
+      date: "2026",
+    },
+    {
+      id: "gal-3",
       title: "Embroidered Monogram Crest Detail",
       category: "Reveal",
       src: "/images/marlbros-crest-patch.jpg",
@@ -42,20 +52,12 @@ export default function HomePage() {
       date: "Sept 2026",
     },
     {
-      id: "gal-3",
+      id: "gal-4",
       title: "Signature Ivory Collar Finish",
       category: "Reveal",
       src: "/images/collar-detail.jpg",
       caption: "Classic polo collar with red/cream stripe insert and tailored neckline.",
       date: "Sept 2026",
-    },
-    {
-      id: "gal-4",
-      title: "The Founding Seven Brotherhood",
-      category: "Brotherhood",
-      src: "https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=800&q=80",
-      caption: "Where it all began — seven founding mates after our inaugural turf fixture.",
-      date: "Est. 2023",
     },
     {
       id: "gal-5",
@@ -189,41 +191,119 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Column: Hero Visual Showcase */}
+            {/* Right Column: Hero Visual Showcase (With Squad Photo Featured) */}
             <div className="lg:col-span-5 flex flex-col items-center">
-              <div className="relative w-full max-w-md group">
+              <div className="relative w-full max-w-lg group">
+                {/* Switcher Pills on top of Hero Card */}
+                <div className="flex items-center justify-between mb-3 px-1">
+                  <div className="inline-flex p-1 bg-neutral-900/90 rounded-lg border border-neutral-800 backdrop-blur-sm">
+                    <button
+                      type="button"
+                      onClick={() => setHeroImageTab("squad")}
+                      className={`px-3.5 py-1.5 rounded-md text-xs font-bold tracking-wider uppercase transition-all flex items-center space-x-1.5 ${
+                        heroImageTab === "squad"
+                          ? "bg-white text-black shadow-sm"
+                          : "text-neutral-400 hover:text-white"
+                      }`}
+                    >
+                      <Users className="w-3.5 h-3.5" />
+                      <span>The Squad</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setHeroImageTab("jersey")}
+                      className={`px-3.5 py-1.5 rounded-md text-xs font-bold tracking-wider uppercase transition-all flex items-center space-x-1.5 ${
+                        heroImageTab === "jersey"
+                          ? "bg-white text-black shadow-sm"
+                          : "text-neutral-400 hover:text-white"
+                      }`}
+                    >
+                      <ShoppingBag className="w-3.5 h-3.5 text-[#70111A]" />
+                      <span>2026 Kit</span>
+                    </button>
+                  </div>
+
+                  <span className="text-[11px] font-mono text-[#C2A267] uppercase tracking-wider hidden sm:inline">
+                    {heroImageTab === "squad" ? "★ The 30 Brothers" : "★ Batch #01"}
+                  </span>
+                </div>
+
                 {/* Visual Card Frame */}
                 <div className="relative aspect-[4/3] rounded-lg overflow-hidden border border-neutral-700 shadow-2xl bg-neutral-950">
-                  <Image
-                    src="/images/jersey-showcase.jpg"
-                    alt="MarlBros FC Official 2026 Jersey"
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    priority
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                  
-                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white">
-                    <div>
-                      <span className="text-[10px] uppercase tracking-widest font-mono text-[#C2A267]">
-                        2026 Home Kit
-                      </span>
-                      <div className="font-serif font-bold text-lg">Crimson & Vintage Cream</div>
-                    </div>
-                    <Link
-                      href="/jersey"
-                      className="p-2.5 bg-white text-black rounded-full hover:scale-110 transition-transform shadow"
-                    >
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
-                  </div>
+                  {heroImageTab === "squad" ? (
+                    <>
+                      <Image
+                        src="/images/team-squad.jpg"
+                        alt="MarlBros FC Official Squad Photo - From 7 to 30 Brothers"
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        priority
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
+                      
+                      <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between text-white">
+                        <div>
+                          <span className="text-[10px] uppercase tracking-widest font-mono text-[#C2A267] block">
+                            MarlBros FC · Home Turf
+                          </span>
+                          <div className="font-serif font-bold text-lg leading-snug">
+                            The 30 Brotherhood
+                          </div>
+                          <p className="text-[11px] text-neutral-300 mt-0.5 line-clamp-1">
+                            United under the night lights at Victoria Arena.
+                          </p>
+                        </div>
+                        <Link
+                          href="/about"
+                          className="p-2.5 bg-white text-black rounded-full hover:scale-110 transition-transform shadow shrink-0 ml-3"
+                          title="View Club Story"
+                        >
+                          <ArrowRight className="w-4 h-4" />
+                        </Link>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <Image
+                        src="/images/jersey-showcase.jpg"
+                        alt="MarlBros FC Official 2026 Jersey"
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        priority
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
+                      
+                      <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between text-white">
+                        <div>
+                          <span className="text-[10px] uppercase tracking-widest font-mono text-[#C2A267] block">
+                            2026 Home Kit
+                          </span>
+                          <div className="font-serif font-bold text-lg leading-snug">
+                            Crimson & Vintage Cream
+                          </div>
+                          <p className="text-[11px] text-neutral-300 mt-0.5 line-clamp-1">
+                            Embroidered crown monogram & custom numbering.
+                          </p>
+                        </div>
+                        <Link
+                          href="/jersey"
+                          className="p-2.5 bg-white text-black rounded-full hover:scale-110 transition-transform shadow shrink-0 ml-3"
+                          title="Customize Jersey"
+                        >
+                          <ArrowRight className="w-4 h-4" />
+                        </Link>
+                      </div>
+                    </>
+                  )}
                 </div>
 
                 {/* Sub-badge below hero */}
                 <div className="mt-3 flex items-center justify-between px-2 text-xs text-neutral-400 font-mono">
-                  <span>EMBROIDERED MONOGRAM</span>
+                  <span>EST. 2023</span>
                   <span>·</span>
-                  <span>100% BREATHABLE JACQUARD</span>
+                  <span>VICTORIA ARENA</span>
+                  <span>·</span>
+                  <span>30 REGISTERED BROTHERS</span>
                 </div>
               </div>
             </div>
@@ -301,12 +381,12 @@ export default function HomePage() {
 
             {/* Two-Column Card Grid (THR Style) */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-6 border-t border-editorial-border">
-              {/* Card 1: Club Story */}
+              {/* Card 1: Club Story with Real Squad Photo */}
               <article className="group space-y-3">
                 <div className="relative aspect-[4/3] bg-neutral-100 rounded-sm overflow-hidden border border-editorial-border">
                   <Image
-                    src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=600&q=80"
-                    alt="Founded with 7 mates"
+                    src="/images/team-squad.jpg"
+                    alt="MarlBros FC Brotherhood"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />

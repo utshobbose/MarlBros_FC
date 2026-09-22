@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import Image from "next/image";
@@ -38,9 +38,9 @@ export default function GalleryPage() {
     },
     {
       id: "g-4",
-      title: "The Founding Seven: Post-Match Brotherhood",
+      title: "The MarlBros FC Squad on Turf",
       category: "Brotherhood",
-      src: "https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=1000&q=80",
+      src: "/images/team-squad.jpg",
       caption: "Our inaugural team squad after the founding derby fixture.",
       date: "Oct 2023",
     },
@@ -153,7 +153,7 @@ export default function GalleryPage() {
               <div className="absolute bottom-3 left-3 right-3 text-white">
                 <div className="flex items-center space-x-2 text-[10px] uppercase font-bold tracking-wider text-[#C2A267]">
                   <span>{item.category}</span>
-                  <span>·</span>
+                  <span>Â·</span>
                   <span className="text-neutral-400">{item.date}</span>
                 </div>
                 <h3 className="font-serif font-bold text-base mt-0.5 group-hover:underline">
@@ -186,3 +186,4 @@ export default function GalleryPage() {
     </div>
   );
 }
+
